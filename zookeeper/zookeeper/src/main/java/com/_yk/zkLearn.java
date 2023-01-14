@@ -1,11 +1,10 @@
 package com._yk;
 
-import org.apache.zookeeper.KeeperException;
-import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooKeeper;
+import org.apache.zookeeper.*;
 
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -26,7 +25,8 @@ public class zkLearn implements Watcher {
         println(paths, System.out::println);
     }
 
-    public void create(){
+    public void create(String path,byte[] data) throws InterruptedException, KeeperException {
+        zk.create(path, data, new ArrayList<>(), CreateMode.EPHEMERAL);
     }
 
     public void info2Path(){
