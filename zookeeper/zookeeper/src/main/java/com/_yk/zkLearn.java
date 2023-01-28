@@ -16,7 +16,7 @@ public class zkLearn implements Watcher {
      *
      */
     public void connect() throws IOException, InterruptedException, KeeperException {
-        zk = new ZooKeeper("192.168.25.147:2181", 3000, this);
+        zk = new ZooKeeper("192.168.25.139:2181", 3000, this);
         get2Path("/");
     }
 
@@ -26,7 +26,7 @@ public class zkLearn implements Watcher {
     }
 
     public void create(String path,byte[] data) throws InterruptedException, KeeperException {
-        zk.create(path, data, new ArrayList<>(), CreateMode.EPHEMERAL);
+        zk.create(path, data, new ArrayList<>(), CreateMode.EPHEMERAL_SEQUENTIAL);
     }
 
     public void info2Path(){

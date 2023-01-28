@@ -11,10 +11,11 @@ public class App {
         try {
             zkLearn = new zkLearn();
 //            zkLearn.create("/test", "".getBytes(StandardCharsets.UTF_8));
+            zkLearn.connect();
+
             System.out.println("/zookeeper ||== >");
             zkLearn.get2Path("/zookeeper");
             System.out.println("all == >");
-            zkLearn.connect();
         } catch (IOException | InterruptedException | KeeperException e) {
             throw new RuntimeException(e);
         } finally {
