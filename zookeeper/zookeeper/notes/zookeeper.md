@@ -190,7 +190,18 @@ zk中是怎么选举leader的？
 
 # API
 
+
+[Test Code](../src/test/java/com/_yk/AppTest.java)
+
     callback -> reactive 响应式编程：可以更充分的压榨OS，HW资源、性能
+
+## 分布式配置
+```text
+集群统一配置中
+    将数据配置到zookeeper中，可以通过getData并watch，可以形成，分布式中配置统一配置
+    
+```
+
 
 
 ## 分布式锁实现
